@@ -41,16 +41,16 @@ CFTM v1.0 is developed using the Python API of Agisoft Metashape Pro v1.8.5 in a
 
 * [ ] Right-click on `This PC` and select `Properties`, then find `Advanced system settings` and open the panel.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/a5d8910f703743b88dcf12cc68048c8d.png#pic_center =x500)
+![1](https://img-blog.csdnimg.cn/direct/a5d8910f703743b88dcf12cc68048c8d.png#pic_center)
 * [ ] Open the Environment Variables panel, select `Path` under `System variables`, and click `Edit`.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/cff55c0155424fa78c429a11842b9170.png#pic_center =x500)
+![2](https://img-blog.csdnimg.cn/direct/cff55c0155424fa78c429a11842b9170.png#pic_center)
 
 * [ ] Click `New`, then enter the installation path (the folder path containing Metashape.exe), and proceed to `OK` all panels to complete the environment variable setup.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/65e75d1da67b4fc5af28d66707fb463b.png#pic_center =x500)
+![3](https://img-blog.csdnimg.cn/direct/65e75d1da67b4fc5af28d66707fb463b.png#pic_center)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/afd77a456d5147e0b5f291ca37e12211.png#pic_center =x500)
+![4](https://img-blog.csdnimg.cn/direct/afd77a456d5147e0b5f291ca37e12211.png#pic_center)
 
 ## 1.3  Installing Third-Party Python Libraries
 
@@ -175,7 +175,7 @@ Other installation tutorials: [Installation, Debugging, 3D Reconstruction Practi
 
 Prepare two sets of image collections taken at different times in the same survey area, denoted as epoch1 and epoch2. When optical cameras capture ground images, the onboard GPS positioning system simultaneously records the geographical location of the aircraft at the moment of shooting, obtaining POS data, denoted as POS1 and POS2. Note that some drone manufacturers (such as DJI) directly embed POS information into the EXIF of the images.
 
-![示例数据](https://img-blog.csdnimg.cn/direct/85d5658088874d578252f4a166fbba70.png#pic_center)
+![5](https://img-blog.csdnimg.cn/direct/85d5658088874d578252f4a166fbba70.png#pic_center)
 
 # 3  Getting Started
 
@@ -189,7 +189,7 @@ Prepare two sets of image collections taken at different times in the same surve
 7. Use triangulation to construct tie points from the common feature tracks.
 8. Calculate the Epoch Reprojection Error (ERE) of the tie points and iterate until convergence to refine the image poses after registration.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/b3ba658ea63a4522b503d0631b14bd8f.png)
+![6](https://img-blog.csdnimg.cn/direct/b3ba658ea63a4522b503d0631b14bd8f.png#pic_center)
 ## 3.2  Usage Steps
 
 >- We provide a complete workflow from multi-temporal data input to terrain product output, including data import, parameter configuration, coarse co-alignment, CFTM fine co-alignment, dense reconstruction, and terrain product generation and export. As you can see, CFTM is embedded within the traditional workflow, taking input of image poses and joint sparse point clouds, and outputting optimized image poses and joint sparse point clouds. It runs as a registration optimization algorithm after SfM and before MVS.
@@ -203,17 +203,17 @@ Prepare two sets of image collections taken at different times in the same surve
 * Import image and POS data into the project file. Double-click on `chunk1` in the workspace to select the chunk, click the `Add Photos` button, navigate to your image folder in the file explorer, select all images from the first epoch, click `Open`, and wait for the photos to load.
 * For the second epoch data, click the `Add Chunk` button, then double-click on `chunk2` to select the chunk as the current chunk (the font will be bold after selection), and add the second epoch images following the same method.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/032ee42e16ea4db49f7c537ab5107459.png#pic_center =x500)
+![7](https://img-blog.csdnimg.cn/direct/032ee42e16ea4db49f7c537ab5107459.png#pic_center=x500)
 
 * If POS data is not embedded in the EXIF information of the images, you need to manually import the POS data. Switch to `Reference` in the `Workspace`, click `Import`, select the corresponding POS data, and in the popup options box, choose the appropriate `coordinate system`, `angular system`, `delimiter`, `labels`, and `precision`.
 
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/9977369ea5a343ba85dbc68354a447af.png#pic_center =x500)
+  ![8](https://img-blog.csdnimg.cn/direct/9977369ea5a343ba85dbc68354a447af.png#pic_center=x500)
 
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/03c0d3a2de664880864cddbf842045e8.png#pic_center =x500)
+  ![9](https://img-blog.csdnimg.cn/direct/03c0d3a2de664880864cddbf842045e8.png#pic_center=x500)
 
 * If there are multiple flights in a single epoch that need to be added separately, you can first add the data of each flight to individual chunks, and then merge them into one chunk. The specific steps are to click on `Workflow` in the main menu bar, select `Merge Chunks...`, in the popup options box, `select` the chunks need to be merged, and then click `OK`.
 
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/3346570a0c43449f8801508d63f37601.png#pic_center =x500)
+  ![10](https://img-blog.csdnimg.cn/direct/3346570a0c43449f8801508d63f37601.png#pic_center=x500)
 
 * Save the project file (assuming the project file name is cftm_test_project.psx). We recommend storing it in a individual folder because the subsequent CFTM process files will be stored in a folder, namely "cftm",  with the same directory as the project file.
 
@@ -222,13 +222,15 @@ Prepare two sets of image collections taken at different times in the same surve
 * Each chunk needs to set `reference coordinate system`, `camera model parameters`, and `precision parameters` separately. In the `Workspace`, `double-click` on the chunk to select chunk.
 * Convert the reference coordinates system of the images to the corresponding `projected coordinate system`. For example, if the original positioning information collected by the onboard equipment is in the WGS-84 reference coordinate system, then the projected coordinate system would be WGS84 UTM zone 47N based on the geolocation.
 
-  ![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/176cba00b71f41578fed385eaa785bb3.png#pic_center =x500)
+  ![11](https://img-blog.csdnimg.cn/direct/176cba00b71f41578fed385eaa785bb3.png#pic_center=x500)
 
 * Click on `Reference Settings`, check `camera reference`, and set `camera accuracy` according to the nominal positioning accuracy of the onboard GNSS; leave the other values as default.
 
-![description](https://img-blog.csdnimg.cn/direct/bf5c4897bcef40269eb516bec5bb0c29.png#pic_center%20=x400)
+![12](https://img-blog.csdnimg.cn/direct/bf5c4897bcef40269eb516bec5bb0c29.png#pic_center%20=x400)
 
-* Select `Tools` in the main menu, choose `Camera Calibration...`, and configure the camera calibration parameters in the popup options box. It should be noted that if the chunk is obtained by merging multiple chunks, there will be multiple camera models here. You can select all of them, then right-click and choose `Merge Groups` from the menu, so that one chunk corresponds to only one camera model.  ![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/f32f0865bbe247bfae705504742c6b9e.png#pic_center =x300)
+* Select `Tools` in the main menu, choose `Camera Calibration...`, and configure the camera calibration parameters in the popup options box. It should be noted that if the chunk is obtained by merging multiple chunks, there will be multiple camera models here. You can select all of them, then right-click and choose `Merge Groups` from the menu, so that one chunk corresponds to only one camera model.
+
+![13](https://img-blog.csdnimg.cn/direct/f32f0865bbe247bfae705504742c6b9e.png#pic_center=x300)
 
 ### Step 3: Coarse Registration
 
@@ -236,7 +238,7 @@ Prepare two sets of image collections taken at different times in the same surve
 * After the operation is completed, we achieve coarse registration of the data using co-alignment, resulting in a merged sparse point cloud and image poses.
 * If there are issues such as block drift, too many missing images, or misaligned images, it is recommended to check: Are the POS data correctly matched? Is the imaging quality good? Is the positioning system disturbed?
 
-  ![description](https://img-blog.csdnimg.cn/direct/fcbbda3111dd414cb188b12e5901a89e.png#pic_center%20=700x400)
+  ![14](https://img-blog.csdnimg.cn/direct/fcbbda3111dd414cb188b12e5901a89e.png#pic_center%20=700x400)
 
 ### Step 4: Create and Export Checkpoints (Optional)
 
@@ -244,13 +246,13 @@ Prepare two sets of image collections taken at different times in the same surve
 * We need to perform accurate marker placement. Select the newly added marker (e.g., named point 1), right-click and choose `Filter Photos by Markers`, then the corresponding visible images for that point will appear in the `Photos` panel. Double-click on the first image, then in the zoomed panel, drag the label to the accurate location of ground feature point. The color of the flag will change from blue to green (in Metashape, when a marker is used as a control point, green and blue respectively indicate whether the point is enabled or not during optimization; however, when used as a checkpoint, the point will only become invalid after selecting `Remove Marker` from the `right-click menu`, otherwise it will be considered as a valid point for calculation). Then continue to place markers on the next image. Please ensure that roughly equal numbers of images are marked in both epochs.
 * Repeat the above steps to create checkpoints until selecting at least 5 checkpoints evenly distributed in stable areas.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/151a1b0e0e2842ecb436be1382ce1e8b.png)
+![15](https://img-blog.csdnimg.cn/direct/151a1b0e0e2842ecb436be1382ce1e8b.png)
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/16ed5247b9e048508925edeed7d2f638.png)
+![16](https://img-blog.csdnimg.cn/direct/16ed5247b9e048508925edeed7d2f638.png)
 
 - Press Ctrl+R to bring up the `Run Python Script` dialog box, select the program `..\toolbox\CheckPoints_Export.py` from the CFTM code package, click `OK`, and then the checkpoint data file will be exported in the same directory as the project file (for example, named `cftm_test_project_CPsdatabase.txt`).
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/2dbd3dd7e9164ac6891369fff9101240.png)
+![17](https://img-blog.csdnimg.cn/direct/2dbd3dd7e9164ac6891369fff9101240.png)
 
 
 ### Step 5: Configure Parameters
