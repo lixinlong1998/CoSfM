@@ -226,7 +226,7 @@ Prepare two sets of image collections taken at different times in the same surve
 
 * Click on `Reference Settings`, check `camera reference`, and set `camera accuracy` according to the nominal positioning accuracy of the onboard GNSS; leave the other values as default.
 
-![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/bf5c4897bcef40269eb516bec5bb0c29.png#pic_center =x400)
+![description](https://img-blog.csdnimg.cn/direct/bf5c4897bcef40269eb516bec5bb0c29.png#pic_center%20=x400)
 
 * Select `Tools` in the main menu, choose `Camera Calibration...`, and configure the camera calibration parameters in the popup options box. It should be noted that if the chunk is obtained by merging multiple chunks, there will be multiple camera models here. You can select all of them, then right-click and choose `Merge Groups` from the menu, so that one chunk corresponds to only one camera model.  ![在这里插入图片描述](https://img-blog.csdnimg.cn/direct/f32f0865bbe247bfae705504742c6b9e.png#pic_center =x300)
 
