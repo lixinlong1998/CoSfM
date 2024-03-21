@@ -3,19 +3,12 @@ A tool for high precision co-registration of multi-epoch images photogrammetry b
 
 # CFTM User Manual Version 1.0
 update 2024.03.010
-Copyright © 2024 Xinlong Li, BDCGS, Chang'an University
 
 # About
 
-CFTM is a tool developed based on Agisoft Metashape. It is inspired by advanced co-alignment algorithms and improves the matching method and adds filtering optimization algorithms. It can achieve high-precision registration and photogrammetric processing of multi-period aerial images simultaneously, placing the generated multi-period three-dimensional spatial data directly in the same reference coordinate system, enabling high-precision spatiotemporal analysis applications, such as surface deformation monitoring. If you use this project for your research, please cite:
-> @inproceedings{Xinlong Li2024CFTM,
-    author={Xinlong Li, Mingtao Ding, Zhenhong Li, Peng Cui},
-    title={Common-Feature-Track-Matching approach for multi epoch UAV},
-    booktitle={XXX},
-    year={2024},
-}
-> 
-# Repositories
+CFTM is a tool developed based on Agisoft Metashape. It is inspired by advanced co-alignment algorithms and improves the matching method and adds filtering optimization algorithms. It can achieve high-precision registration and photogrammetric processing of multi-period aerial images simultaneously, placing the generated multi-period three-dimensional spatial data directly in the same reference coordinate system, enabling high-precision spatiotemporal analysis applications, such as surface deformation monitoring.
+
+# 0  Download
 The source code is available at [https://github.com/lixinlong1998/CoSfM](https://github.com/lixinlong1998/CoSfM).
 
 The English version of documentation is available at [https://blog.csdn.net/LXLng/article/details/134613468](https://blog.csdn.net/LXLng/article/details/134613468).
