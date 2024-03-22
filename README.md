@@ -15,6 +15,10 @@ The English version of documentation is available at [https://blog.csdn.net/LXLn
 
 The Chinese version of documentation is available at [https://blog.csdn.net/LXLng/article/details/136598055](https://blog.csdn.net/LXLng/article/details/136598055).
 
+The dataset for test is available at [BaiduNetDisk](https://pan.baidu.com/s/1nNklV2M1Zs02UkWtGG_tLw?pwd=knaf)
+
+Alternatively, you can download all properties mentioned above from BaiduNetDisk link:
+[https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb](https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb)
 
 # 1  Installation
 
