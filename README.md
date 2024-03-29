@@ -15,9 +15,9 @@ The English version of documentation is available at [https://blog.csdn.net/LXLn
 
 The Chinese version of documentation is available at [https://blog.csdn.net/LXLng/article/details/136598055](https://blog.csdn.net/LXLng/article/details/136598055).
 
-The dataset for test is available at [https://pan.baidu.com/s/1nNklV2M1Zs02UkWtGG_tLw](https://pan.baidu.com/s/1nNklV2M1Zs02UkWtGG_tLw)
+The dataset for test is available at [BaiduNetDisk](https://pan.baidu.com/s/1nNklV2M1Zs02UkWtGG_tLw) or [GoogleDrive](https://pan.baidu.com/s/1nNklV2M1Zs02UkWtGG_tLw)
 
-Alternatively, you can download all properties mentioned above from BaiduNetDisk link:
+Alternatively, you can download all assets mentioned above from BaiduNetDisk link:
 [https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb](https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb)
 
 # Installation
@@ -172,14 +172,7 @@ Download COLMAP 3.6 release at [https://github.com/colmap/colmap/releases/tag/3.
 
 ![image](https://github.com/lixinlong1998/CoSfM/assets/73974003/f32e5459-95f3-4903-bc8d-caab0d353fee)
 
-Click **COLMAP-3.6-windows-cuda.zip** or **COLMAP-3.6-windows-no-cuda.zip** (Depending on whether your device has NVIDIA GPU enabled.) to download. After downloading, you will get a compressed file. Simply unzip it.
-
-> "bin" contains the executable binary files of the software.
-> "lib" contains third-party library files used.
-> "COLMAP" is the program. Simply double-click to run.
-> "RUN_TESTS" is the testing file.
-
-Next, double-click "RUN_TESTS" to test the environment. If there are no issues, the COLMAP are successfully installed and you can directly double-click "COLMAP" to enter the software's graphical interface. Please remember the path to COLMAP.bat, as it will be needed for subsequent configurations.
+Click **COLMAP-3.6-windows-cuda.zip** or **COLMAP-3.6-windows-no-cuda.zip** (depending on whether your device has NVIDIA GPU enabled) to download. After downloading, you will get a compressed file. Simply unzip it. Next, double-click "RUN_TESTS" to test the environment. If there are no issues, the COLMAP are successfully installed and you can directly double-click "COLMAP" to enter the software's graphical interface. Please remember the path to COLMAP.bat, as it will be needed for subsequent configurations.
 
 #  License
 
