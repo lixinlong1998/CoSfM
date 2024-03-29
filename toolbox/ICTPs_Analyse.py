@@ -3,7 +3,7 @@ import sys
 import time
 import Metashape
 
-sys.path.append(r'G:\AResearchG\20221223_CoSfM\Release\CoSfM_v1')
+sys.path.append(r'D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0')
 from src_CFTM import ConnectData_Metashape
 from src_CFTM import Func_CommonTiePoints
 from src_Metashape import FuncMs_CommonTiePoints as MsCTPs
@@ -11,7 +11,7 @@ from src_Metashape import FuncMs_Marker as MsMarker
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r G:\AResearchG\20221223_CoSfM\Release\CoSfM_v1\toolbox\ICTPs_Analyse.py
+metashape.exe -r D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\ICTPs_Analyse.py
 
 Introduction:
 The Common Tie Points(CTPs) analysis consists of three parts:
@@ -26,7 +26,9 @@ The Common Tie Points(CTPs) analysis consists of three parts:
 
 # project_path = "J:/20230524_CTPsGenerator_GangTuo/GangTuo_e1e2_Coalign.psx"
 
-project_path = r"K:\Baige\Aprojects\Coalign_e3e5\Baige_e3e5_Coalign.psx"
+# project_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project_CA10_CM0.psx"
+project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2\Baige_e1e2_Coalign_CA2_CM2S_AMF0.psx"
+
 
 # project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2/Baige_e1e2_Coalign.psx"
 
@@ -57,12 +59,13 @@ if __name__ == '__main__':
         # choose the chunk with maximum images
         chunk_images_num = 0
         for chunk_i in Metashape.app.document.chunks:
-            chunki_images_num = len(chunk_i.cameras)
-            if chunki_images_num >= chunk_images_num:
-                chunk_images_num = chunki_images_num
-                chunk = chunk_i
-            else:
-                continue
+            if chunk_i.enabled:
+                chunki_images_num = len(chunk_i.cameras)
+                if chunki_images_num >= chunk_images_num:
+                    chunk_images_num = chunki_images_num
+                    chunk = chunk_i
+                else:
+                    continue
 
     # [3]  prepare data
     starttime = time.perf_counter()

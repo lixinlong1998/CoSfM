@@ -2,28 +2,35 @@ import time
 import sys
 import Metashape
 
-sys.path.append(r'G:\AResearchG\20221223_CoSfM\Release\CoSfM_v1')
+sys.path.append(r'D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0')
 from src_CFTM import Func_CommonTiePoints
 from src_CFTM import ConnectData_Metashape
 from src_Metashape import FuncMs_Marker as MsMarker
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r G:\AResearchG\20221223_CoSfM\Release\CoSfM_v1\recycle\AnalyseCPs_pairwise.py
+metashape.exe -r D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\CheckPoints_Analyse.py
 
 '''
 #################################################       SETUP      #####################################################
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2_finalVER/Baige_e1e2_5VGCPs.psx"
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e3_finalVER/Baige_e1e3_5VGCPs.psx"
-project_path = r"K:\CoSfM_v1\project_with_cftm\cftm_test_project.psx"
-CPsDbs_path = r"K:\CoSfM_v1/cftm_test_project_CPsdatabase.txt"
 CPs_Enabled = []
 
+# project_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project.psx"
+# CPsDbs_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Dataset\CheckPointsDatabase.txt"
+# CPs_Enabled = []
+
+# project_path = r"F:\_ORIGIN_BDCGS_UAV_DATA2\20220812_CoalignAnalysis\Exp1_ETPs-Coalign_e1e2\Baige_e1e2_Coalign_MdER.psx"
+# CPsDbs_path = r"F:\_ORIGIN_BDCGS_UAV_DATA2\20220812_CoalignAnalysis\Baige_e1e2_Coalign_CPsdatabase.txt"
+
+project_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project.psx"
+CPsDbs_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Dataset\CheckPointsDatabase.txt"
+
+
 # e1e2
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2_finalVER/Baige_e1e2_5VGCPs.psx"
+# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2/Baige_e1e2_Coalign_CA2_CM1P_AMF0_b.psx"
 # project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2/Baige_e1e2_Coalign.psx"
 # project_path = r"J:\20230418_CFTM\Baige\Exp0_Be1e2_finalVER/Baige_e1e2_CFTM.psx"
-# CPsDbs_path = r"J:\20230418_CFTM\Baige/Baige_e1e2_Coalign_CPsdatabase.txt"
+# CPsDbs_path = r"E:\20230418_CFTM\Baige/Baige_e1e2_Coalign_CPsdatabase.txt"
 # CPs_Enabled = [i for i in range(30) if i not in [1, 6, 15, 17, 22,
 #                                                  2, 4, 8, 10, 13, 16, 18, 21, 24, 25]]  # first row for VGCPs
 
@@ -49,6 +56,7 @@ CPs_Enabled = []
 # except 3, 10, 11, 16, 17   -->  0.2137
 # except 4, 11, 13, 16, 19   -->  0.2466
 # except 3,11,13,16,19(4,14,16,20,23)   -->  ,0.36
+
 
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"
@@ -106,11 +114,12 @@ if __name__ == '__main__':
 
     # [6] 显示统计信息
     Report = MsMarker.readMarkersAllQuaReport(path_CPsQuaSta)
-    print([doc.path[0:(len(doc.path) - 4)],
-           Report['Res_P_RMSE(m)'], Report['Res_Z_RMSE(m)'], Report['Res_T_RMSE(m)'],
-           Report['Res_P_MAE(m)'], Report['Res_Z_MAE(m)'],
-           Report['Res_P_AVG(m)'], Report['Res_Z_AVG(m)'],
-           Report['Res_P_STD(m)'], Report['Res_Z_STD(m)'],
-           Report['Distrib_ErrorPixel_AVG'],
-           Report['Distrib_RepErr_v3_e1_AVG'], Report['Distrib_RepErr_v3_e2_AVG'],
-           ])
+    print(f'Project file: {doc.path[0:(len(doc.path) - 4)]}')
+    print('\t  P\tZ\tT')
+    print('RMSE\t', Report['Res_P_RMSE(m)'], Report['Res_Z_RMSE(m)'], Report['Res_T_RMSE(m)'])
+    print('MAE\t', Report['Res_P_MAE(m)'], Report['Res_Z_MAE(m)'], Report['Res_T_MAE(m)'])
+    print('AVG\t', Report['Res_P_AVG(m)'], Report['Res_Z_AVG(m)'], Report['Res_T_AVG(m)'])
+    print('STD\t', Report['Res_P_STD(m)'], Report['Res_Z_STD(m)'], Report['Res_T_STD(m)'], '\n')
+    print('Distrib_ErrorPixel_AVG:\t', Report['Distrib_ErrorPixel_AVG'])
+    print('Distrib_RepErr_v3_e1_AVG:\t', Report['Distrib_RepErr_v3_e1_AVG'])
+    print('Distrib_RepErr_v3_e2_AVG:\t', Report['Distrib_RepErr_v3_e2_AVG'])

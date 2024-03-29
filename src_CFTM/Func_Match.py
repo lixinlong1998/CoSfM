@@ -1,7 +1,7 @@
 import os
 
-os.add_dll_directory(r'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin')  # for import cv2
-os.add_dll_directory(r'G:\UAV_SOFTWARE\OpenCV\opencv_4_5_0_cuda_11_1_py38\install\x64\vc16\bin')  # for import cv2
+# os.add_dll_directory(r'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin')  # for import cv2
+# os.add_dll_directory(r'G:\UAV_SOFTWARE\OpenCV\opencv_4_5_0_cuda_11_1_py38\install\x64\vc16\bin')  # for import cv2
 import cv2 as cv
 import numpy as np
 

@@ -132,30 +132,6 @@ def initialCTPs(chunkProcess, CamerasEpoch, MarkersGrid, camera_ids, num_nominat
             ,where track = [view,view,...,view]
             ,where Information = [[point_id,Track_id],MarkerKey] or [[CrossMatch,CrossMatch,...,CrossMatch],MarkerKey]
     '''
-
-    def boundingBoxOptimalSelection(datalist, select_num):
-        '''
-        input:
-            datalist = [[data_id,index_a,index_b,...]...]
-        return:
-            data_selected = [data_id,data_id,...,data_id]
-        '''
-        id_array = np.asarray([row[0] for row in datalist])
-        data_array = np.asarray([row[1:] for row in datalist])
-        # 计算每列的最大值和最小值
-        min_values = np.min(data_array, axis=0)
-        max_values = np.max(data_array, axis=0)
-        # 对每个元素进行最值归一化
-        data_array_normalized = (data_array - min_values) / (max_values - min_values)
-        # 计算每个数据点到最优圆心的距离
-        distances = np.linalg.norm(max_values - data_array_normalized, axis=1)
-        # 与id进行拼接
-        data_distances = np.concatenate((id_array[:, np.newaxis], distances[:, np.newaxis]), axis=1)
-        # 排序后选择最优的data
-        data_distances_rank = data_distances[np.argsort(data_distances[:, 1])]
-        data_selected = [data_id for data_id in data_distances_rank[:select_num, 0]]
-        return data_selected
-
     # 基于初始条件选择一部分Markers导入到chunk中，进行初始化配准
     print('[Script]    Initializing...')
     print('[Script]        chunk.label:', chunkProcess.label)
@@ -175,11 +151,21 @@ def initialCTPs(chunkProcess, CamerasEpoch, MarkersGrid, camera_ids, num_nominat
         MarkersAllQua += MarkersAllQua_grid
         # 匹配数：越多越好
         # 时相内交会角:越大越好
-        # 使用边界框选法选择Markers,边界框是以最优点为圆心的圆
-        Markers_matches_and_triangle = [[row[0], row[18], row[20]] for row in MarkersAllQua_grid]
-        MarkerKey_selected = boundingBoxOptimalSelection(Markers_matches_and_triangle, num_nominated)
+        MarkersAllQua_array = np.asarray(MarkersAllQua_grid)
+        sorted_by_matches = MarkersAllQua_array[np.argsort(MarkersAllQua_array[:, 20])]  # from min to max
+        sorted_by_triangl = MarkersAllQua_array[np.argsort(MarkersAllQua_array[:, 18])]  # from min to max
+        # 根据排名计算得分
+        matches_score = np.asarray([[MarkersAllQua[0], score+1] for score, MarkersAllQua in enumerate(sorted_by_matches)])
+        triangl_score = np.asarray([[MarkersAllQua[0], score+1] for score, MarkersAllQua in enumerate(sorted_by_triangl)])
+        ranked_by_matches_score = matches_score[np.argsort(matches_score[:, 1])]  # from min to max
+        ranked_by_triangl_score = triangl_score[np.argsort(triangl_score[:, 1])]  # from min to max
+        # 计算得分平均值
+        calculate_score = np.asarray([[i, (matches_score + ranked_by_triangl_score[i, 1]) * 0.5] for i, matches_score in
+                                      enumerate(ranked_by_matches_score)])
+        # 根据平均值进行排名
+        Score_ranked = calculate_score[np.argsort(-calculate_score[:, 1])]  # from max to min
         # 抽取的点添加到外部大列表中
-        MarkersSelected += [Markers[int(MsMarker.readMarkerKey(MarkerKey)[1])] for MarkerKey in MarkerKey_selected]
+        MarkersSelected += [Markers[int(MsMarker.readMarkerKey(i)[1])] for i in Score_ranked[:num_nominated, 0]]
     print('[Script]        Number of enabled grids:', GridsNumber)
     print('[Script]        Number of imported markers:', MarkersNumber)
     print('[Script]        Number of selected markers:', len(MarkersSelected))

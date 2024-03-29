@@ -14,6 +14,9 @@ track = [identifier, [projection.coord[0], projection.coord[1]]]
 
 
 def getCameraIdentifier(camera):
+    '''
+    create identifier
+    '''
     # '2021:04:04 13:40:13' -> 20210404134013
     identifier = ''
     for s in camera.photo.meta['Exif/DateTimeOriginal']:
@@ -30,16 +33,16 @@ starttime = time.perf_counter()
 # access document
 doc = Metashape.app.document
 
-# automatically choose the chunk with maximum number of images,which is aim at choose the 'coalign' chunk
-chunk_photos_num = 0
+# choose the chunk enabled and with maximum images
+chunk_images_num = 0
 for chunk_i in Metashape.app.document.chunks:
-    chunki_photos_num = len(chunk_i.cameras)
-    if chunki_photos_num >= chunk_photos_num:
-        # print(chunki_photos_num)
-        chunk_photos_num = chunki_photos_num
-        chunk = chunk_i
-    else:
-        continue
+    if chunk_i.enabled:
+        chunki_images_num = len(chunk_i.cameras)
+        if chunki_images_num >= chunk_images_num:
+            chunk_images_num = chunki_images_num
+            chunk = chunk_i
+        else:
+            continue
 
 # creat a file for writing results
 path_CPsdatabase = doc.path[0:(len(doc.path) - 4)] + '_CPsdatabase.txt'

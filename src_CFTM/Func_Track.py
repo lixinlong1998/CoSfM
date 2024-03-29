@@ -139,11 +139,8 @@ def filterTracks(grid_id, Tracks_Generated, Cameras, Sensors, chunkKeypoints, ra
         step2  基于子集中view_id的数量，过滤掉那些view_id少于2的track
         step3
     '''
-    # [test part]
-    testFile = open('G:/AResearchG/20221223_CoSfM/Code/test/Test_RANSACtrackfiltter/test_filterTracks.txt', "w")
-    fwriter = csv.writer(testFile, delimiter='\t', lineterminator='\n')
-    Tracks_Generated_Length_Statistic = []
 
+    Tracks_Generated_Length_Statistic = []
     # parameters
     threshold_TrackLength = 2
     threshold_Eligible = 3
