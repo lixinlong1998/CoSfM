@@ -2,7 +2,7 @@
 A tool for high precision co-registration of multi-epoch images photogrammetry based on Agisoft Metashape Python API and COLMAP.
 
 # CFTM User Manual Version 1.0
-update 2024.03.010
+update 2024.03.29
 
 # About
 
