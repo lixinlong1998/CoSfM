@@ -165,16 +165,20 @@ python -m pip list
 > This script employ COLMAP version 3.6, and other versions have not been tested.
 
 Official installation tutorial: [Official Website](https://demuc.de/colmap/), [GitHub Releases](https://github.com/colmap/colmap/releases)
+
 Other installation tutorials: [Installation, Debugging, 3D Reconstruction Practice, and Intermediate Results Output of Colmap under Windows 10](https://blog.csdn.net/LXLng/article/details/121039782)
 
 Download COLMAP 3.6 release at [https://github.com/colmap/colmap/releases/tag/3.6](https://github.com/colmap/colmap/releases/tag/3.6)
+
 ![image](https://github.com/lixinlong1998/CoSfM/assets/73974003/f32e5459-95f3-4903-bc8d-caab0d353fee)
-Click **COLMAP-3.6-windows-cuda.zip** or **COLMAP-3.6-windows-no-cuda.zip** (Depending on whether your device has NVIDIA GPU enabled.) to download
-After downloading, you will get a compressed file. Simply unzip it.
-"bin" contains the executable binary files of the software.
-"lib" contains third-party library files used.
-"COLMAP" is the program. Simply double-click to run.
-"RUN_TESTS" is the testing file.
+
+Click **COLMAP-3.6-windows-cuda.zip** or **COLMAP-3.6-windows-no-cuda.zip** (Depending on whether your device has NVIDIA GPU enabled.) to download. After downloading, you will get a compressed file. Simply unzip it.
+
+> "bin" contains the executable binary files of the software.
+> "lib" contains third-party library files used.
+> "COLMAP" is the program. Simply double-click to run.
+> "RUN_TESTS" is the testing file.
+
 Next, double-click "RUN_TESTS" to test the environment. If there are no issues, the COLMAP are successfully installed and you can directly double-click "COLMAP" to enter the software's graphical interface. Please remember the path to COLMAP.bat, as it will be needed for subsequent configurations.
 
 #  License
