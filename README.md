@@ -6,7 +6,7 @@ update 2024.03.29
 
 # About
 
-CFTM is a tool developed based on Agisoft Metashape. It is inspired by advanced co-alignment algorithms and improves the matching method and adds filtering optimization algorithms. It can achieve high-precision registration and photogrammetric processing of multi-period aerial images simultaneously, placing the generated multi-period three-dimensional spatial data directly in the same reference coordinate system, enabling high-precision spatiotemporal analysis applications, such as surface deformation monitoring.
+CFTM is a tool developed based on Agisoft Metashape Python API for high-precision registration of multi-epoch aerial images during photogrammetry. It is inspired by advanced co-alignment algorithms, and it improves the matching method and filtering optimization algorithms. It can recover the potential common tie points (CTPs) which may disabled during incremental SfM due to insufficient cross-epoch matches, and hence resolve the failure of co-alignment. Apart from that, the part iterative optimization of CFTM can improve the accuracy of co-alignment in most normal cases. The output of CFTM is the refined image poses, this means the later generated products(such as DEMs, DOMs, and 3D meshs) are directly located in the same reference coordinate system, enabling high-precision spatiotemporal analysis (such as surface deformation monitoring).
 
 # Download
 The source code is available at [https://github.com/lixinlong1998/CoSfM](https://github.com/lixinlong1998/CoSfM).
