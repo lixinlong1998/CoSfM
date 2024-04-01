@@ -15,8 +15,6 @@ The English version of documentation is available at [https://blog.csdn.net/LXLn
 
 The Chinese version of documentation is available at [https://blog.csdn.net/LXLng/article/details/136598055](https://blog.csdn.net/LXLng/article/details/136598055).
 
-The dataset for test is available at [BaiduNetDisk](https://pan.baidu.com/s/1nNklV2M1Zs02UkWtGG_tLw) or [GoogleDrive](https://pan.baidu.com/s/1nNklV2M1Zs02UkWtGG_tLw)
-
 Alternatively, you can download all assets mentioned above from BaiduNetDisk link:
 [https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb](https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb)
 
@@ -109,56 +107,6 @@ python -m pip install opencv-python==4.7.0.72 -i https://pypi.tuna.tsinghua.edu.
 python -m pip install opencv-contrib-python==4.7.0.72 -i https://pypi.tuna.tsinghua.edu.cn/simple/
 python -m pip install G:\UAV_SOFTWARE\Metashape\Python3Module\GDAL-3.4.3-cp38-cp38-win_amd64.whl
 ```
-
-* [ ] After installation, type the following commands line by line in the command prompt to check the libraries installed in the current Metashape Python environment.
-
-```bash
-cd /d <G:\UAV_SOFTWARE\Metashape\Metashape1.8.5\python>
-python -m pip list
-```
-
-
-| Library | Version | Library | Version |
-| ----------------------- | ---------- | ---------------------- | ---------- |
-| attrs                 | 23.1.0   | backcall             | 0.2.0    |
-| click                 | 8.1.3    | colorama             | 0.4.3    |
-| ConfigArgParse        | 1.5.3    | contourpy            | 1.0.7    |
-| cycler                | 0.11.0   | dash                 | 2.9.3    |
-| dash-core-components  | 2.0.0    | dash-html-components | 2.0.0    |
-| dash-table            | 5.0.0    | decorator            | 4.4.2    |
-| fastjsonschema        | 2.16.3   | Flask                | 2.2.3    |
-| fonttools             | 4.39.3   | GDAL                 | 3.4.3    |
-| importlib-metadata    | 6.5.0    | importlib-resources  | 5.12.0   |
-| ipykernel             | 5.3.4    | ipython              | 7.16.1   |
-| ipython-genutils      | 0.2.0    | ipywidgets           | 8.0.6    |
-| itsdangerous          | 2.1.2    | jedi                 | 0.17.2   |
-| Jinja2                | 3.1.2    | jsonschema           | 4.17.3   |
-| jupyter-client        | 6.1.6    | jupyter-core         | 4.6.3    |
-| jupyterlab-widgets    | 3.0.7    | kiwisolver           | 1.4.4    |
-| llvmlite              | 0.39.1   | MarkupSafe           | 2.1.2    |
-| matplotlib            | 3.7.1    | nbformat             | 5.7.0    |
-| networkx              | 3.1      | numba                | 0.56.4   |
-| numpy                 | 1.23.5   | open3d               | 0.17.0   |
-| opencv-contrib-python | 4.7.0.72 | opencv-python        | 4.7.0.72 |
-| packaging             | 23.1     | pandas               | 2.0.0    |
-| parso                 | 0.7.1    | pexpect              | 4.8.0    |
-| pickleshare           | 0.7.5    | Pillow               | 9.5.0    |
-| pip                   | 24.0     | pkgutil_resolve_name | 1.3.10   |
-| plotly                | 5.14.1   | prompt-toolkit       | 3.0.5    |
-| ptyprocess            | 0.6.0    | Pygments             | 2.6.1    |
-| pyparsing             | 3.0.9    | pyrsistent           | 0.19.3   |
-| PySide2               | 5.15.2.1 | python-dateutil      | 2.8.1    |
-| pytz                  | 2023.3   | pywin32              | 228      |
-| pyzmq                 | 19.0.1   | qtconsole            | 4.7.5    |
-| QtPy                  | 1.9.0    | scipy                | 1.10.1   |
-| setuptools            | 49.2.0   | shiboken2            | 5.15.2.1 |
-| shiboken2-generator   | 5.15.2.1 | six                  | 1.15.0   |
-| tenacity              | 8.2.2    | tornado              | 6.0.4    |
-| traitlets             | 4.3.3    | tzdata               | 2023.3   |
-| wcwidth               | 0.2.5    | Werkzeug             | 2.2.3    |
-| wheel                 | 0.29.0   | widgetsnbextension   | 4.0.7    |
-| zipp                  | 3.15.0   |                      |          |
-
 
 ## Step 4  Install COLMAP (Recommended)
 
