@@ -23,7 +23,7 @@ def extractSIFT(Cameras, cameraPaths, feature_path):
     # Collect all parent folder paths of the images
     colmap_workspace = creat_colmap_workspace(Cameras, feature_path)
 
-    # Create a COLMAP project file for each image folder and perform feature extraction
+    # Create a COLMAP project file for each image folder and run feature extraction
     for colmap_path_dir in colmap_workspace:
         # load paths
         image_folder_path = colmap_path_dir["image_folder_path"]

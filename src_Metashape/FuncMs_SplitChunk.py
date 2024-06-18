@@ -1,3 +1,4 @@
+import os
 def splitChunk_individual(coalign_chunk, epochs, camera_ids, CamerasEpoch, epoch_mode):
     '''
     function:
@@ -29,7 +30,7 @@ def splitChunk_individual(coalign_chunk, epochs, camera_ids, CamerasEpoch, epoch
                     camerasRemoved_list.append(camera)
             elif epoch_mode == "FOLDER":
                 camera_path = camera.photo.path
-                if camera_path != epochs[i]:
+                if os.path.basename(os.path.dirname(camera_path)) != epochs[i]:
                     camerasRemoved_list.append(camera)
 
         chunk.remove(camerasRemoved_list)
@@ -70,6 +71,6 @@ def splitChunk_pairwise(coalign_chunk, chunksName, epochs, camera_ids, CamerasEp
                     camerasRemoved_list.append(camera)
             elif epoch_mode == "FOLDER":
                 camera_path = camera.photo.path
-                if camera_path != epochs[i]:
+                if os.path.basename(os.path.dirname(camera_path)) != epochs[i]:
                     camerasRemoved_list.append(camera)
         chunk.remove(camerasRemoved_list)

@@ -279,7 +279,7 @@ def iterationState(iteration_id, res_iterations, countDown, countIncr, CTPsAllQu
         det_MixReprojError = res_iterations[-1] - MixReprojError
         res_iterations.append(MixReprojError)
 
-        # 如果迭代正在收敛或发散，我们会进入倒数阶段，连续收敛或发散num_inertia次则迭代停止
+        # 如果迭代正在收敛或发散，程序会进入倒数阶段，连续收敛或发散num_inertia次则迭代停止
         if abs(det_MixReprojError) <= threshold_Termination:
             countDown += 1
             countIncr = 0

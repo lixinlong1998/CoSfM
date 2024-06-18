@@ -51,7 +51,7 @@ def splitChunk(coalign_chunk, epochs, epoch_mode):
                     camerasRemoved_list.append(camera)
             elif epoch_mode == "FOLDER":
                 camera_path = camera.photo.path
-                if camera_path != epochs[i]:
+                if os.path.basename(os.path.dirname(camera_path)) != epochs[i]:
                     camerasRemoved_list.append(camera)
         chunk.remove(camerasRemoved_list)
 

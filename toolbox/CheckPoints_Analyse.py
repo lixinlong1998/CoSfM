@@ -2,43 +2,41 @@ import time
 import sys
 import Metashape
 
-sys.path.append(r'D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0')
+sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.0')
 from src_CFTM import Func_CommonTiePoints
 from src_CFTM import ConnectData_Metashape
 from src_Metashape import FuncMs_Marker as MsMarker
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\CheckPoints_Analyse.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\CheckPoints_Analyse.py
 
 '''
 #################################################       SETUP      #####################################################
 CPs_Enabled = []
 
-# project_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project.psx"
-# CPsDbs_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Dataset\CheckPointsDatabase.txt"
-# CPs_Enabled = []
-
-# project_path = r"F:\_ORIGIN_BDCGS_UAV_DATA2\20220812_CoalignAnalysis\Exp1_ETPs-Coalign_e1e2\Baige_e1e2_Coalign_MdER.psx"
-# CPsDbs_path = r"F:\_ORIGIN_BDCGS_UAV_DATA2\20220812_CoalignAnalysis\Baige_e1e2_Coalign_CPsdatabase.txt"
-
-project_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project.psx"
-CPsDbs_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Dataset\CheckPointsDatabase.txt"
-
-
 # e1e2
-# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2/Baige_e1e2_Coalign_CA2_CM1P_AMF0_b.psx"
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2/Baige_e1e2_Coalign.psx"
-# project_path = r"J:\20230418_CFTM\Baige\Exp0_Be1e2_finalVER/Baige_e1e2_CFTM.psx"
-# CPsDbs_path = r"E:\20230418_CFTM\Baige/Baige_e1e2_Coalign_CPsdatabase.txt"
+# project_path = r"E:\Projects\20230418_CFTM\Baige\Exp5_ParameterMining\Baige_e1e2_Coalign_noCTPs2.psx"
+# CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e2\B12_CPsdatabase.txt"
+# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2_finalVER\Baige_e1e2_5VGCPs.psx"
+# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2\Baige_e1e2_Coalign.psx"
+# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2_finalVER\Baige_e1e2_CFTM.psx"
+# # project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2\D2_B12_CFTM_K6CA2_CTPs_UR.psx"
+# project_path = r"E:\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_20VGCPs.psx"
+# CPsDbs_path = r"E:\20230418_CFTM\Baige\Baige_e1e2_Coalign_CPsdatabase.txt"
+# CPs_Enabled = [i for i in range(30) if i not in [0]]
 # CPs_Enabled = [i for i in range(30) if i not in [1, 6, 15, 17, 22,
 #                                                  2, 4, 8, 10, 13, 16, 18, 21, 24, 25]]  # first row for VGCPs
 
 # e1e3
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e3_finalVER/Baige_e1e3_5VGCPs.psx"
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e3/D2_B13_Coal_K6_CA2_CTP_noUR_bak.psx"
-# project_path = r"j:\20230418_CFTM\Baige\Exp0_Be1e3_finalVER/Baige_e1e3_CFTM.psx"
-# CPsDbs_path = r"j:\20230418_CFTM\Baige/Baige_e1e3_Coalign_CPsdatabase.txt"
+# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e3_finalVER\Baige_e1e3_5VGCPs.psx"
+# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e3/D2_B13_Coal_K6_CA2_CTP_noUR_bak.psx"
+# project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e3_finalVER/Baige_e1e3_CFTM.psx"
+# project_path = r"E:\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_15VGCPs.psx"
+project_path = r"E:\Projects\20230418_CFTM\Baige\Exp0_Be1e3\D2_B13_Coal_K6_CA2_CTP_noUR_bak.psx"
+CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e3\B13_CPsdatabase.txt"
+# CPsDbs_path = r"E:\20230418_CFTM\Baige\Baige_e1e3_Coalign_CPsdatabase.txt"
+# CPs_Enabled = [i for i in range(30) if i not in [0]]
 # CPs_Enabled = [i for i in range(30) if i not in [1, 6, 15, 17, 22,
 #                                                  2, 4, 8, 10, 13, 16, 18, 21, 24, 25]]  # first row for VGCPs
 
@@ -47,10 +45,12 @@ CPsDbs_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Dataset\CheckPoints
 # CPsDbs_path = "I:/20230418_CTPsGenerator/Baige_e2e3_Coalign_CPsdatabase.txt"
 
 # xiaomojiu e2e3
-# project_path = r"I:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_CA10_5VGCPs.psx"
-# project_path = r"I:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_Coalign.psx"
-# project_path = r"J:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_CFTM.psx"
-# CPsDbs_path = r"J:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_CPsdatabase.txt"
+# project_path = r"E:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_CA10_5VGCPs.psx"
+# project_path = r"E:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_Coalign.psx"
+# project_path = r"E:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_CFTM.psx"
+# project_path = r"E:\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_10VGCPs.psx"
+# CPsDbs_path = r"E:\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CFTM/XiaoMoJiu_e2e3_CPsdatabase.txt"
+# CPsDbs_path = r"E:\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\XiaoMoJiu_e2e3_CPs_CPsdatabase_v1.txt"
 # CPs_Enabled = [i for i in range(20) if i not in [3, 11, 13, 16, 19]]
 # CPs_Enabled=[]
 # except 3, 10, 11, 16, 17   -->  0.2137

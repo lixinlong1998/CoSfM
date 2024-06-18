@@ -17,15 +17,15 @@ AlignImages = False
 ErrorReduction = False
 BuildDenseCloud = True
 BuildDSM = True
-WhiteBalance = True
-BuildDOM = True
+WhiteBalance = False
+BuildDOM = False
 BuildTiledModel = False
 
 ExportDSM = True
-ExportDOM = True
-ExportTiledModel = True
+ExportDOM = False
+ExportTiledModel = False
 ExportReport = True
-GenerateQuality = True
+GenerateQuality = False
 
 save_project_each_step = True
 
@@ -37,8 +37,8 @@ Tiepoint_Limit = 0
 
 # ErrorReduction Arguments
 Reprojection_Error = 0.3
-Reconstruction_Uncertainty = 15
-Projection_Accuracy = 5
+Reconstruction_Uncertainty = 20
+Projection_Accuracy = 8
 MaxRemovePoints = 0.3
 
 # Dense Matching Arguments
@@ -56,13 +56,13 @@ TiledModel_ImageFormat = 'JPEG'
 bundle_adjustment_args = {
     "fit_f": True,
     "fit_cx": True, "fit_cy": True,
-    "fit_b1": False, "fit_b2": False,
+    "fit_b1": True, "fit_b2": True,
     "fit_k1": True, "fit_k2": True,
     "fit_k3": True, "fit_k4": False,
     "fit_p1": True, "fit_p2": True,
     "fit_corrections": False,
-    "adaptive_fitting": True,
-    "tiepoint_covariance": True
+    "adaptive_fitting": False,
+    "tiepoint_covariance": False
 }
 #################################################   END OF SETUP   #####################################################
 # Checking compatibility
@@ -323,8 +323,8 @@ def exportQuality(chunk, path_to_save):
     path_quality = path_to_save + '_quality.txt'
     f = open(path_quality, "w")
     fwriter = csv.writer(f, delimiter='\t', lineterminator='\n')
-    fwriter.writerow(str(chunk.orthomosaic.resolution))
-    fwriter.writerow(str(chunk.elevation.resolution))
+    fwriter.writerow(chunk.orthomosaic.resolution)
+    fwriter.writerow(chunk.elevation.resolution)
     f.close()
 
 
@@ -425,5 +425,5 @@ if __name__ == '__main__':
         doc.save()
     ProcessTime = time.perf_counter() - starttime0
     print('[Script]    All processed done in {0}h {1}m {2:0.3f} sec.'.format(ProcessTime // 3600,
-                                                                         ProcessTime % 3600 // 60,
-                                                                         ProcessTime % 60))
+                                                                             ProcessTime % 3600 // 60,
+                                                                             ProcessTime % 60))

@@ -32,17 +32,17 @@ Here is a short check list for setting up:
 # Run script
 Since the script contains parallel computing, you need to run this script from cmd by using the following command:
 
-metashape.exe -r D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0\Run.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\Run.py
 
 (please change the root of script to yours.)
 '''
 ########################################################################################################################
 ################################################       SETUP       #####################################################
 # Open a project file
-workspace_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Example"
+workspace_path = r"D:\Research\20221223_CoSfM\Release\Test\Example"
 project_name = "cftm_test_project.psx"
-images_path = r'D:\Work\Research\20221223_CoSfM\Release\Test\Dataset\images'
-check_points_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Dataset/CPsDatabase.txt"
+images_path = r'D:\Research\20221223_CoSfM\Release\Test\Dataset\images'
+check_points_path = r"D:\Research\20221223_CoSfM\Release\Test\Dataset/CPsDatabase.txt"
 
 # please make sure your major version is:
 compatible_major_version = "1.8"

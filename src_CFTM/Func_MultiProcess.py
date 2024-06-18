@@ -100,9 +100,8 @@ def GenerateCTPs(grid_id, corners, Camera_IdList, Cameras, camera_ids, CamerasEp
 
 
 def print_error(value):
-    '''这个函数可以输出多进程中的报错，但是不会终止多进程
-    提示：在跑多进程程序之前，先把单次的程序跑通了，再跑多进程！因为多进程跑的时候不会报错，只会卡在那不出结果
-    https://blog.csdn.net/qq_31375855/article/details/107957317?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522167895887716800197024507%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fall.%2522%257D&request_id=167895887716800197024507&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~all~first_rank_ecpm_v1~rank_v31_ecpm-2-107957317-null-null.142^v73^wechat_v2,201^v4^add_ask,239^v2^insert_chatgpt&utm_term=%E4%B8%BA%E4%BB%80%E4%B9%88multiprocess%E4%B8%8D%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C%E4%B9%9F%E4%B8%8D%E6%8A%A5%E9%94%99&spm=1018.2226.3001.4187
+    '''
+    这个函数可以输出多进程中的报错，但是不会终止多进程
     '''
     print("error: ", value)
 

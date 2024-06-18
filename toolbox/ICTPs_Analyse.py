@@ -3,7 +3,7 @@ import sys
 import time
 import Metashape
 
-sys.path.append(r'D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0')
+sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.0')
 from src_CFTM import ConnectData_Metashape
 from src_CFTM import Func_CommonTiePoints
 from src_Metashape import FuncMs_CommonTiePoints as MsCTPs
@@ -11,7 +11,7 @@ from src_Metashape import FuncMs_Marker as MsMarker
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r D:\Work\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\ICTPs_Analyse.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\ICTPs_Analyse.py
 
 Introduction:
 The Common Tie Points(CTPs) analysis consists of three parts:
@@ -26,8 +26,8 @@ The Common Tie Points(CTPs) analysis consists of three parts:
 
 # project_path = "J:/20230524_CTPsGenerator_GangTuo/GangTuo_e1e2_Coalign.psx"
 
-# project_path = r"D:\Work\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project_CA10_CM0.psx"
-project_path = r"E:\20230418_CFTM\Baige\Exp0_Be1e2\Baige_e1e2_Coalign_CA2_CM2S_AMF0.psx"
+# project_path = r"D:\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project_CA10_CM0.psx"
+project_path = r"J:\_ORIGIN_BDCGS_UAV_DATA2\20220812_CoalignAnalysis\Exp1_e1e2_ReproduceTest\keylimit60000_fixb1b2\Baige_e1e2_Coalign.psx"
 
 
 # project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2/Baige_e1e2_Coalign.psx"
@@ -108,12 +108,13 @@ if __name__ == '__main__':
         CTPsNum = MsCTPs.analyseICTPsNum(Points, point_ids, TracksEpoch)
         # analysis the spacial distribution of CTPs
         CTPsSpa = MsCTPs.analyseICTPsSpa(Points, weights, ICTPs_IdList)
-        # analysis the type of CTP
-        CTPsTyp = MsCTPs.analyseICTPsType(ICTPs_IdList, Points, TracksEpoch)
+        # # analysis the type of CTP
+        # CTPsTyp = MsCTPs.analyseICTPsType(ICTPs_IdList, Points, TracksEpoch)
         # analysis the density of CTPs
         # CTPsDen = MsCTPs.analyseICTPsDen(Points, ICTPs_IdList)
         # analysis the quality of CTPs
         CTPsQua, CTPsRetriCoord = MsCTPs.analyseICTPsQua(chunk, ICTPsTracks, ICTPs_IdList, Cameras, Sensors)
+
         ## get the quality of CTPs, which given by metashape
         # CTPsMsQua = MsCTPs.analyseICTPsQua2(chunk, ICTPs_IdList)
         ## construct CTPs Data

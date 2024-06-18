@@ -1,11 +1,15 @@
-from config import *
+import os
+import sys
+import time
 import Metashape
+
+sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.0')
 from src_CFTM import ConnectData_Metashape
 from src_CFTM import Func_CommonTiePoints
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r <...\CFTM\src_Process\Process_SplitChunk.py>
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\Process_SplitChunk.py
 
 Introduction:
 确定coalign chunk（指定chunk_name，或者程序默认将像片数最大的chunk作为coalign chunk）
@@ -13,7 +17,15 @@ Introduction:
 # epochs = [['2020:10:14'], ['2021:07:03'], ['2021:12:03'], ['2021:12:06']]
 '''
 #################################################       SETUP      #####################################################
-project_path = r"K:\Baige\Aprojects\Coalign_e3e5\Baige_e3e5_Coalign_Reconstruction.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_10VGCPs.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_15VGCPs.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_20VGCPs.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_10VGCPs.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_15VGCPs.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_20VGCPs.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_10VGCPs.psx"
+# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_15VGCPs.psx"
+project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_20VGCPs.psx"
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"
 
@@ -51,7 +63,7 @@ def splitChunk(coalign_chunk, epochs, epoch_mode):
                     camerasRemoved_list.append(camera)
             elif epoch_mode == "FOLDER":
                 camera_path = camera.photo.path
-                if camera_path != epochs[i]:
+                if os.path.basename(os.path.dirname(camera_path)) != epochs[i]:
                     camerasRemoved_list.append(camera)
         chunk.remove(camerasRemoved_list)
 
