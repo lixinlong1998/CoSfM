@@ -123,7 +123,7 @@ Download COLMAP 3.6 release at [https://github.com/colmap/colmap/releases/tag/3.
 
 Click **COLMAP-3.6-windows-cuda.zip** or **COLMAP-3.6-windows-no-cuda.zip** (depending on whether your device has NVIDIA GPU enabled) to download. After downloading, you will get a compressed file. Simply unzip it. Next, double-click "RUN_TESTS" to test the environment. If there are no issues, the COLMAP are successfully installed and you can directly double-click "COLMAP" to enter the software's graphical interface. Please remember the path to COLMAP.bat, as it will be needed for subsequent configurations.
 
-## Tutorial
+#  Tutorial
 
 After installation, please check the documentation to get the configuration and parameter settings
 
