@@ -1,12 +1,12 @@
 # CoSfM: CFTM
-A tool for high precision co-registration of multi-epoch images photogrammetry based on Agisoft Metashape Python API and COLMAP.
+A tool for high precision co-registration of multi-epoch images photogrammetry achieved with Agisoft Metashape Python API and COLMAP (optional).
 
 # CFTM User Manual Version 1.0
-update 2024.03.29
+update 2024.06.24
 
 # About
 
-CFTM is a tool developed based on Agisoft Metashape Python API for high-precision registration of multi-epoch aerial images during photogrammetry. It is inspired by advanced co-alignment algorithms, and it improves the matching method and filtering optimization algorithms. It can recover the potential common tie points (CTPs) which may disabled during incremental SfM due to insufficient cross-epoch matches, and hence resolve the failure of co-alignment. Apart from that, the part iterative optimization of CFTM can improve the accuracy of co-alignment in most normal cases. The output of CFTM is the refined image poses, this means the later generated products(such as DEMs, DOMs, and 3D meshs) are directly located in the same reference coordinate system, enabling high-precision spatiotemporal analysis (such as surface deformation monitoring).
+CFTM is a type of co-SfM method for co-registering multi-epoch aerial images while achieving photogrammetry simultaneously. With the novel matching strategy - 'matching on feature tracks' and designed optimization algorithms, it can generate dense and evenly distributed common tie points (CTPs), which may not insufficient in traditional incremental SfM, therefore achieving high-precision co-alignment accuracy. Apart from that, the part iterative optimization of CFTM can improve the accuracy of traditional co-alignment in normal cases. The output of CFTM is the refined image poses, witch means the later generated products (such as DEMs, DOMs, and 3D meshs) are directly located in the same coordinate system with nearly unbias, enabling high-precision spatiotemporal analysis (such as surface deformation monitoring).
 ![image](https://github.com/lixinlong1998/CoSfM/assets/73974003/50e69665-5896-4140-9630-a3a19e36b490)
 
 # Download
