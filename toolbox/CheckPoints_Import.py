@@ -3,13 +3,13 @@ import sys
 import time
 import Metashape
 
-sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.0')
+sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.1')
 from src_CFTM import ConnectData_Metashape
 from src_Metashape import FuncMs_Marker as MsMarker
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\CheckPoints_Import.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\toolbox\CheckPoints_Import.py
 
 Introduction:
 给定CPs按MakrerAdd格式的文件地址，将CTPs导入到打开的工程文件中，可以选择是否执行BA，同时还可以导出Metashape为Markers计算的指标

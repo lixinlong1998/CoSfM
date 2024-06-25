@@ -3,13 +3,13 @@ import sys
 import time
 import Metashape
 
-sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.0')
+sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.1')
 from src_CFTM import ConnectData_Metashape
 from src_CFTM import Func_CommonTiePoints
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\Process_SplitChunk.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\toolbox\Process_SplitChunk.py
 
 Introduction:
 确定coalign chunk（指定chunk_name，或者程序默认将像片数最大的chunk作为coalign chunk）

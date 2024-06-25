@@ -34,9 +34,9 @@ def mergeCTPs(chunk, args):
     Tracks = ConnectData_Metashape.getTracks(chunk)
     print('[Script][TimeCost]    [1]  data prepared:', time.perf_counter() - starttime)
 
-    # [2]  analysis data
+    # [2]  analysis ICTPs
     starttime = time.perf_counter()
-    print('[Script]    Analysing data...')
+    print('[Script]    Analysing ICTPs...')
     # get sparse cloud boundary
     Boundary_CLCS, Boundary_PJCS = Func_SpatialDistribution.getBoundary(Points)
     # get ICTPs

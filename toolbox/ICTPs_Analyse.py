@@ -3,7 +3,7 @@ import sys
 import time
 import Metashape
 
-sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.0')
+sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.1')
 from src_CFTM import ConnectData_Metashape
 from src_CFTM import Func_CommonTiePoints
 from src_Metashape import FuncMs_CommonTiePoints as MsCTPs
@@ -11,7 +11,7 @@ from src_Metashape import FuncMs_Marker as MsMarker
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\toolbox\ICTPs_Analyse.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\toolbox\ICTPs_Analyse.py
 
 Introduction:
 The Common Tie Points(CTPs) analysis consists of three parts:
@@ -20,19 +20,7 @@ The Common Tie Points(CTPs) analysis consists of three parts:
     Part3: calculate CTPs quality by script, which are reprojection error, angle, epoch match number.
 '''
 #################################################       SETUP      #####################################################
-# project_path = "H:/20230418_CTPsGenerator/Exp1_RandomSelection/Baige_e1e2_Coalign.psx"
-
-# project_path = "J:/20230524_CTPsGenerator_ChaShuShan/ChaShuShan_e1e2_Coalign.psx"
-
-# project_path = "J:/20230524_CTPsGenerator_GangTuo/GangTuo_e1e2_Coalign.psx"
-
-# project_path = r"D:\Research\20221223_CoSfM\Release\Test\Example\cftm_test_project_CA10_CM0.psx"
-project_path = r"J:\_ORIGIN_BDCGS_UAV_DATA2\20220812_CoalignAnalysis\Exp1_e1e2_ReproduceTest\keylimit60000_fixb1b2\Baige_e1e2_Coalign.psx"
-
-
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2/Baige_e1e2_Coalign.psx"
-
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e3\D2_B13_Coal_K6_CA2_CTP_noUR_bak.psx"
+project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
 
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"

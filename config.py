@@ -15,7 +15,7 @@ Before you start using this plugin, please do:
 ########################################################################################################################
 ################################################       SETUP       #####################################################
 metashape_version = 1.8
-PATH_CODE = r'D:\Research\20221223_CoSfM\Release\CFTM_v1.0'
+PATH_CODE = r'D:\Research\20221223_CoSfM\Release\CFTM_v1.1'
 PATH_COLMAP_BAT = r'D:\Software\COLMAP\COLMAP-3.6-windows-cuda\COLMAP.bat'
 # PATH_CUDA = r'C:\Program Files\NVIDIA GPU Computing Toolkit\CUDA\v11.8\bin'
 # PATH_OPENCV = r'G:\UAV_SOFTWARE\OpenCV\opencv_4_5_0_cuda_11_1_py38\install\x64\vc16\bin'

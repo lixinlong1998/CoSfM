@@ -9,32 +9,35 @@ from src_Process import Process_IterativeOptimization_part1
 from src_Process import Process_IterativeOptimization_part2
 from src_Process import Process_IterativeOptimization_part3
 
-'''CoSfM version 1.0
+'''CoSfM: CFTM version 1.0
 
 source: https://github.com/LXLone/CoSfM
 author: Xinlong Li
 
 # Introduction
-The Common Tie Points(CTPs) generator consists of three parts:
-    Part1: Export and store data from Metashape;
-    Part2: Read the data and generate CTPs by using external functions in 'src_CFTM', then save the results as .txt files;
-    Part3: Read the files and import CTPs with Metashape.Marker format into Metashape, then run the optimization;
+The CFTM consists of three parts:
+    Part1: Initial alignment;
+    Part2: Generate CTPs;
+    Part3: Iterative optimization;
 
 # Preparation
-Highly recommend checking the README or the user manual book before use!
+Please check the README or Documentation before use!
 Here is a short check list for setting up:
     1. Add the Metashape into your system environment variable of PATH;
     2. Install the extra third libraries;
     3. Set up the paths in ./config.py;
-    4. Set up the parameters in SETUP section below in this script;
-    5. The docment has been created and the images have been merged into the same chunk with proper setting.
+    4. Set up the parameters in SETUP section below;
+    5. The project.psx has been created and the images have been merged into a single union chunk with proper setting.
 
 # Run script
-Since the script contains parallel computing, you need to run this script from cmd by using the following command:
+Since the script contains parallel computing, you need to run this script from 'cmd' by using the following command:
 
-metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.0\Run.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\Run.py
 
-(please change the root of script to yours.)
+(please change the script path to yours.)
+
+# License
+
 '''
 ########################################################################################################################
 ################################################       SETUP       #####################################################
