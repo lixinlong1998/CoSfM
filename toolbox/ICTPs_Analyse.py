@@ -21,7 +21,6 @@ The Common Tie Points(CTPs) analysis consists of three parts:
 '''
 #################################################       SETUP      #####################################################
 project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
-
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"
 weights = [0, 0, 0, 0, 0, 0, 2, 4, 8, 16]

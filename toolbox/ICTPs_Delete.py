@@ -13,9 +13,7 @@ metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\toolbox\ICTPs_Dele
 
 '''
 #################################################       SETUP      #####################################################
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e2_finalVER/Baige_e1e2_5VGCPs.psx"
-# project_path = r"I:\20230418_CFTM\Baige\Exp0_Be1e3_finalVER/Baige_e1e3_5VGCPs.psx"
-project_path = r"E:\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Baige_e1e3"
+project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"
 #################################################   END OF SETUP   #####################################################

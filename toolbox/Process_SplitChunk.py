@@ -17,15 +17,7 @@ Introduction:
 # epochs = [['2020:10:14'], ['2021:07:03'], ['2021:12:03'], ['2021:12:06']]
 '''
 #################################################       SETUP      #####################################################
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_10VGCPs.psx"
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_15VGCPs.psx"
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_20VGCPs.psx"
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_10VGCPs.psx"
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_15VGCPs.psx"
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_20VGCPs.psx"
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_10VGCPs.psx"
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_15VGCPs.psx"
-project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_20VGCPs.psx"
+project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"
 

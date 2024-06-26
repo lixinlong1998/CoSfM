@@ -15,18 +15,8 @@ Introduction:
 给定CPs按MakrerAdd格式的文件地址，将CTPs导入到打开的工程文件中，可以选择是否执行BA，同时还可以导出Metashape为Markers计算的指标
 '''
 #################################################       SETUP      #####################################################
-# e1e2
-# project_path = r"E:\20230418_CFTM\20240509_Revision\Baige_e1e2\Projects\B12_CPs.psx"
-# CPsDbs_path = r"E:\20230418_CFTM\20240509_Revision\Baige_e1e2\Baige_e1e2_Coalign_CPsdatabase.txt"
-
-# e1e3
-# project_path = r"E:\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_15VGCPs.psx"
-# CPsDbs_path = r"E:\20230418_CFTM\20240509_Revision\Baige_e1e3\Projects\B13_20VGCPs_CPsdatabase.txt"
-
-# xiaomojiu e2e3
-project_path = r"E:\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\Projects\X23_10VGCPs.psx"
-CPsDbs_path = r"E:\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\X23_15VGCPs_RMSE0.27.txt"
-
+project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
+CPsDbs_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\CheckPointsDatabase.txt"
 MarkerGroupName = 'CPs'
 chunk_name = ''
 #################################################   END OF SETUP   #####################################################

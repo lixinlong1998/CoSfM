@@ -42,10 +42,10 @@ metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\Run.py
 ########################################################################################################################
 ################################################       SETUP       #####################################################
 # Open a project file
-workspace_path = r"D:\Research\20221223_CoSfM\Release\Test\Example"
-project_name = "cftm_test_project.psx"
-images_path = r'D:\Research\20221223_CoSfM\Release\Test\Dataset\images'
-check_points_path = r"D:\Research\20221223_CoSfM\Release\Test\Dataset/CPsDatabase.txt"
+workspace_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example"
+project_name = "cftm_example_project.psx"
+images_path = r'E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\images'
+check_points_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\CheckPointsDatabase.txt"
 
 # please make sure your major version is:
 compatible_major_version = "1.8"
@@ -125,10 +125,10 @@ CFTM_args = {
     "gird_size_1": 32,
     "gird_size_2": 64,
     "scoring": [0, 0, 0, 0, 0, 0, 2, 4, 8, 16],
-    "num_nominated": 10,
-    "num_selected": 5,
-    "num_max_iterations": 30,
-    "pool_size": 8,
+    "num_nominated": 30,
+    "num_selected": 10,
+    "num_max_iterations": 50,
+    "pool_size": 16,
     "criterias_1": [2, 3],
     "criterias_2": [1, 3],
     "ratio_inlier_init": 0.25,
@@ -157,14 +157,14 @@ reference_args = {
 # 如果想为每期像片的相机参数
 # Bundle Adjustment Arguments
 bundle_adjustment_args = {
-    "fit_f": True,
+    "fit_f": False,
     "fit_cx": True, "fit_cy": True,
     "fit_b1": False, "fit_b2": False,
-    "fit_k1": True, "fit_k2": True,
+    "fit_k1": False, "fit_k2": True,
     "fit_k3": True, "fit_k4": False,
-    "fit_p1": True, "fit_p2": True,
+    "fit_p1": False, "fit_p2": False,
     "fit_corrections": False,
-    "adaptive_fitting": True,
+    "adaptive_fitting": False,
     "tiepoint_covariance": True
 }
 

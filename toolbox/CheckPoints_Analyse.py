@@ -14,18 +14,8 @@ metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\toolbox\CheckPoint
 '''
 #################################################       SETUP      #####################################################
 project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
-CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Xiaomojiu_e2e3\XiaoMoJiu_e2e3_CPs_CPsdatabase_v1.txt"
-# CPsDbs_path = r"E:\Projects\20230418_CFTM\XiaoMoJiu\XiaoMoJiu_e2e3_CPsdatabase.txt"
-
-
-
-
-# CPs_Enabled = [i for i in range(20) if i not in [3, 11, 13, 16, 19]]
-# except 3, 10, 11, 16, 17   -->  0.2137
-# except 4, 11, 13, 16, 19   -->  0.2466
-# except 3,11,13,16,19(4,14,16,20,23)   -->  ,0.36
-
-CPs_Enabled=[]
+CPsDbs_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\CheckPointsDatabase.txt"
+CPs_Enabled = []
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"
 #################################################   END OF SETUP   #####################################################
