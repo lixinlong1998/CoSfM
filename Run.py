@@ -122,8 +122,8 @@ threshold_Termination:	Iteration convergence threshold. Iteration stops when the
 num_inertia:			Consecutive convergence count. Iteration stops only when convergence signals are triggered consecutively for the given number of times.
 '''
 CFTM_args = {
-    "gird_size_1": 32,
-    "gird_size_2": 64,
+    "gird_size_1": 64,
+    "gird_size_2": 128,
     "scoring": [0, 0, 0, 0, 0, 0, 2, 4, 8, 16],
     "num_nominated": 30,
     "num_selected": 10,
