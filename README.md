@@ -16,8 +16,7 @@ Documentation (English version) is available at [https://blog.csdn.net/LXLng/art
 
 Documentation (Chinese version) is available at [https://blog.csdn.net/LXLng/article/details/136598055](https://blog.csdn.net/LXLng/article/details/136598055).
 
-Alternatively, you can download all assets mentioned above from BaiduNetDisk:
-[https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb](https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb)
+Example dataset and Tutorial is available from BaiduNetDisk: [https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb](https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb)
 
 # Installation
 
