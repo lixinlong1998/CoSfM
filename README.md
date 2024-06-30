@@ -126,7 +126,8 @@ Click **COLMAP-3.6-windows-cuda.zip** or **COLMAP-3.6-windows-no-cuda.zip** (dep
 
 #  Tutorial
 
-After installation, please check the documentation to get the configuration and parameter settings
+After installation, please check the tutorial in code.zip to get the specific configurations and steps for given example dataset.
+Alternaltively, you can check the online tutortial to get the general steps for your own datasets.
 
 #  License
 Please note the licenses of COLMAP if you choose to use it
