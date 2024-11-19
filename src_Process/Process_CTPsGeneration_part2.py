@@ -3,6 +3,7 @@ import math
 import json
 import multiprocessing
 import numpy as np
+import osgeo
 
 
 def readArguments(path):
@@ -68,8 +69,8 @@ if __name__ == '__main__':
     chunkDescriptors_data = np.load(os.path.join(data_package_path, 'chunkDescriptors.npz'))
     chunkKeypoints = {int(key): chunkKeypoints_data[key] for key in chunkKeypoints_data.files}
     chunkDescriptors = {int(key): chunkDescriptors_data[key] for key in chunkDescriptors_data.files}
-    print('chunkKeypoints:', len(chunkKeypoints))
-    print('chunkDescriptors:', len(chunkDescriptors))
+    # print('[Script]chunkKeypoints:', len(chunkKeypoints))
+    # print('[Script]chunkDescriptors:', len(chunkDescriptors))
 
     # Creat output folder
     if not os.path.exists(CTP_path):
@@ -96,8 +97,9 @@ if __name__ == '__main__':
     # creat batches
     batch_size = math.ceil(len(Cubes) / pool_size)
     batches = [Grid_ids[i:i + batch_size] for i in range(0, len(Cubes), batch_size)]
-    print('batch_size:', batch_size)
-    print('batchs:', len(batches))
+    print('[Script]batch_size:', batch_size)
+    print('[Script]batchs:', len(batches))
+    print('[Script]task number:', len(Grid_ids))
 
     # For each batch, a process pool is started
     results = []
@@ -110,12 +112,12 @@ if __name__ == '__main__':
         results.append(result)
 
     # Wait for all process pools to finish executing
-    print('Waiting for all subprocesses finished...')
+    print('[Script]Waiting for all subprocesses finished...')
     for result in results:
         result.wait()
     # Closing the process pool
     pool.close()
     pool.join()
-    print('All task have finished!')
+    print('[Script]All task have finished!')
 
     print('[Script][TimeCost]    :', time.perf_counter() - starttime0)

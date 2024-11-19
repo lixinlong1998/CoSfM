@@ -1,8 +1,8 @@
 # CoSfM: CFTM
 A tool for high precision co-registration of multi-epoch images photogrammetry achieved with Agisoft Metashape Python API and COLMAP (optional).
 
-# CFTM User Manual Version 1.0
-update 2024.06.24
+# CFTM User Manual Version 1.2
+update 2024.11.19
 
 # About
 
