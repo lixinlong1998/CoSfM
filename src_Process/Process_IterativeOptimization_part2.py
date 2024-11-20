@@ -232,6 +232,57 @@ def iterateCTPs(chunkProcess, CamerasEpoch, MarkersGrid, camera_ids, num_nominat
     print('[Script]        Number of selected markers:', len(MarkersSelected))
     return MarkersSelected, MarkersRes
 
+def iterateCTPs_alg2(chunkProcess, CamerasEpoch, MarkersGrid, camera_ids, num_nominated, num_selected, iteration_id):
+    '''
+    The grid size (m,n), nominated number and selected number will significantly affect the CTPs.
+    Here, we try to design a new way to select good CTPs with less affection of parameters.
+    Step1: get ERE for each CTPs
+    Step2: separate ERE range into intervals based on
+    '''
+    # 选择一部分点转换为markers添加到chunk中
+    print('[Script]    ')
+    print('[Script]    Starting loop {0}...'.format(iteration_id))
+    print('[Script]        chunk.label:', chunkProcess.label)
+    # 基于前一次配准的chunk，在每个网格中计算每个marker的指标，这里采用的指标是MixReprojError
+    MarkersRes = {}
+    MarkersResList = []
+    for grid_id, Markers in MarkersGrid.items():
+        MarkersRes_grid = MsMarker.getMarkersRes(chunkProcess, Markers, camera_ids, CamerasEpoch,
+                                                 Index='MixReprojError', MarkerFormat='Add', Triangulation='linear')
+        MarkersRes[grid_id] = MarkersRes_grid
+        MarkersResList += MarkersRes_grid
+    # 将指标在全局从小到大排序，前N个的Markers的MarkerKey被记入候选名单
+    N = len(MarkersGrid) * num_nominated
+    MarkersResList = np.asarray(MarkersResList, dtype=object)
+    MarkersResList_ranked = MarkersResList[np.argsort(MarkersResList[:, 1])]  # error_pixel from max to min
+    if len(MarkersResList) < N:
+        NominatedList = [int(MarkerKey) for MarkerKey in MarkersResList_ranked[:, 0]]
+    else:
+        NominatedList = [int(MarkerKey) for MarkerKey in MarkersResList_ranked[:N, 0]]
+    print('[Script]        Number of nominated markers:', len(NominatedList))
+    # 在每个网格中选取k个【指标】最小且记录于NominatedList中的CTPs
+    MarkersSelected = []
+    for grid_id, MarkersRes_grid in MarkersRes.items():
+        # 先看MarkersRes_grid中有多少个点在NominatedList中
+        MarkersNominated_Key = [int(Res[0]) for Res in MarkersRes_grid if int(Res[0]) in NominatedList]
+        if len(MarkersNominated_Key) <= num_selected:
+            MarkersSelected_Key = MarkersNominated_Key
+        else:
+            # 如果MarkersRes_grid中Nominated Markers的数量大于k个，那么就排序，选最小的k个
+            MarkersRes_grid = np.asarray(MarkersRes_grid, dtype=object)
+            MarkersRes_grid_ranked = MarkersRes_grid[np.argsort(MarkersRes_grid[:, 1])]  # ErrorPixel from min to max
+            MarkersSelected_Key = []
+            MarkersSelected_Num = 0
+            for i in MarkersRes_grid_ranked[:, 0]:
+                if int(i) in MarkersNominated_Key:
+                    MarkersSelected_Key.append(int(i))
+                    MarkersSelected_Num += 1
+                    if MarkersSelected_Num == num_selected:
+                        break
+        # 将抽取的点添加到外部大列表中
+        MarkersSelected += [Marker for Marker in MarkersGrid[grid_id] if int(Marker[2][1]) in MarkersSelected_Key]
+    print('[Script]        Number of selected markers:', len(MarkersSelected))
+    return MarkersSelected, MarkersRes
 
 def analyseCTPsQuality(chunkProcess, MarkerGroupName, camera_ids, CamerasEpoch, iterations_path, iteration_id):
     # 对选中的点进行质量评估，并导出评估报告

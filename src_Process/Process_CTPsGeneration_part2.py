@@ -100,6 +100,10 @@ if __name__ == '__main__':
     print('[Script]batch_size:', batch_size)
     print('[Script]batchs:', len(batches))
     print('[Script]task number:', len(Grid_ids))
+    with open(os.path.join(data_package_path, f'task_number_{len(Grid_ids)}.txt'), 'w') as file:
+        file.write(f"batch_size:{batch_size}\r")
+        file.write(f"batchs:{len(batches)}\r")
+        file.write(f"task number:{len(Grid_ids)}\r")
 
     # For each batch, a process pool is started
     results = []
