@@ -10,14 +10,15 @@ CFTM is a type of co-SfM method for co-registering multi-epoch aerial images whi
 ![image](https://github.com/lixinlong1998/CoSfM/assets/73974003/50e69665-5896-4140-9630-a3a19e36b490)
 
 # Download
+Documentation with tutorial (both English and Chinese version) can be found in code.zip.
+
 Source code is available at [https://github.com/lixinlong1998/CoSfM](https://github.com/lixinlong1998/CoSfM).
 
-Documentation (English version) is available at [https://blog.csdn.net/LXLng/article/details/134613468](https://blog.csdn.net/LXLng/article/details/134613468).
+Online general tutorial (English version) is available at [https://blog.csdn.net/LXLng/article/details/134613468](https://blog.csdn.net/LXLng/article/details/134613468).
 
-Documentation (Chinese version) is available at [https://blog.csdn.net/LXLng/article/details/136598055](https://blog.csdn.net/LXLng/article/details/136598055).
+Online general tutorial (Chinese version) is available at [https://blog.csdn.net/LXLng/article/details/136598055](https://blog.csdn.net/LXLng/article/details/136598055).
 
-Alternatively, you can download all assets mentioned above from BaiduNetDisk:
-[https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb](https://pan.baidu.com/s/1pQaQGsnx3l-Th9ohO8zUGQ?pwd=yieb)
+Example dataset and documentation are available from BaiduNetDisk: [https://pan.baidu.com/s/1s3BJk3cUs6cwj9PNI9s36g?pwd=cftm](https://pan.baidu.com/s/1s3BJk3cUs6cwj9PNI9s36g?pwd=cftm).
 
 # Installation
 
@@ -125,7 +126,8 @@ Click **COLMAP-3.6-windows-cuda.zip** or **COLMAP-3.6-windows-no-cuda.zip** (dep
 
 #  Tutorial
 
-After installation, please check the documentation to get the configuration and parameter settings
+After installation, please check the tutorial in code.zip to get the specific configurations and steps for given example dataset.
+Alternaltively, you can check the online tutortial to get the general steps for your own datasets.
 
 #  License
 Please note the licenses of COLMAP if you choose to use it
