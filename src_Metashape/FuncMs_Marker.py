@@ -661,7 +661,7 @@ def addMarkers_Analyse(chunk, camera_ids, Markers_Analyse, MarkerGroupName):
             marker = chunk.addMarker(point_coord_CLCS, visibility=False)
             # assign marker's attributions
             marker.group = MarkerGroup
-            marker.label = 'Marker_{0}'.format(marker_label)
+            marker.label = marker_label  # 'Marker_{0}'.format(marker_label)
             # marker.reference.location = point_coord_PJCS
             marker.reference.accuracy = Metashape.Vector([10, 10, 10])  # in metres
             marker.reference.enabled = False

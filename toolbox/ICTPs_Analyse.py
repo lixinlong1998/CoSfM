@@ -3,7 +3,7 @@ import sys
 import time
 import Metashape
 
-sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.1')
+sys.path.append(r'D:\Research\20221223_CoSfM\Release\CFTM_v1.2')
 from src_CFTM import ConnectData_Metashape
 from src_CFTM import Func_CommonTiePoints
 from src_Metashape import FuncMs_CommonTiePoints as MsCTPs
@@ -11,7 +11,7 @@ from src_Metashape import FuncMs_Marker as MsMarker
 
 '''Please run this script using the following command in cmd：
 
-metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\toolbox\ICTPs_Analyse.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.2\toolbox\ICTPs_Analyse.py
 
 Introduction:
 The Common Tie Points(CTPs) analysis consists of three parts:

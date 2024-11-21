@@ -32,7 +32,7 @@ Here is a short check list for setting up:
 # Run script
 Since the script contains parallel computing, you need to run this script from 'cmd' by using the following command:
 
-metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\Run.py
+metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.2\Run.py
 
 (please change the script path to yours.)
 
@@ -42,7 +42,7 @@ metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.1\Run.py
 ########################################################################################################################
 ################################################       SETUP       #####################################################
 # Open a project file
-workspace_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example"
+workspace_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\TryHere"
 project_name = "cftm_example_project.psx"
 images_path = r'E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\images'
 check_points_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\CheckPointsDatabase.txt"
@@ -128,7 +128,7 @@ CFTM_args = {
     "num_nominated": 30,
     "num_selected": 10,
     "num_max_iterations": 50,
-    "pool_size": 16,
+    "pool_size": 32,
     "criterias_1": [2, 3],
     "criterias_2": [1, 3],
     "ratio_inlier_init": 0.25,
@@ -230,7 +230,9 @@ args = {
     "report_path": os.path.join(os.path.join(workspace_path, "cftm"), "Reports"),
     "state_path": os.path.join(os.path.join(workspace_path, "cftm"), "state.json"),
     "arguments_path": os.path.join(os.path.join(workspace_path, "cftm"), "Arguments.json"),
-    "state_CFTM_path": os.path.join(os.path.join(workspace_path, "cftm"), "StateCFTM")}
+    "state_CFTM_path": os.path.join(os.path.join(workspace_path, "cftm"), "StateCFTM"),
+    "exe_path": os.path.join(PATH_CODE, 'src_CFTM\\Func_CTPsGenerator_exe.exe')
+}
 ###################################################   END SETUP   ######################################################
 ########################################################################################################################
 
@@ -283,13 +285,13 @@ if __name__ == '__main__':
     if process_args["process_CTPs_generation"] and state['CFTM_run_task'] == 'NO':
         arguments_path = args["arguments_path"]
         os.system(f"metashape.exe -r {PATH_CODE}\src_Process\Process_CTPsGeneration_part2.py {arguments_path}")
-        state['CFTM_run_task'] = 'DONE'
+        # os.system(f"{PATH_CODE}\src_Process\Process_CTPsGeneration_part2.exe {arguments_path}")
         Func_Files.writeArguments(args["state_path"], state)
-
 
     # [5]  Iterative Optimization part 1: merge CTPs
     if process_args["process_iterative_optimization"] and state['IO_mergeCTP'] == 'NO':
         Process_IterativeOptimization_part1.mergeCTPs(chunk, args)
+        state['CFTM_run_task'] = 'DONE'
         doc.save()
         state['IO_mergeCTP'] = 'DONE'
         Func_Files.writeArguments(args["state_path"], state)
