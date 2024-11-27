@@ -11,7 +11,8 @@ CFTM is a type of co-SfM method for co-registering multi-epoch aerial images whi
 
 # Contact us
 Welcome to the UAV Photogrammetry Co-registration Technology WeChat Group. Any questions related to CFTM or drone photogrammetry can be freely discussed here. Please feel free to contact us at any time.
-![image](https://github.com/lixinlong1998/CoSfM/assets/)
+![微信图片_20241127170759](https://github.com/user-attachments/assets/7651174a-8c5b-4859-98b4-eb4a26960332)
+
 
 # Download
 Documentation with tutorial (both English and Chinese version) can be found in code.zip.
