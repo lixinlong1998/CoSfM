@@ -15,14 +15,9 @@ Introduction:
 给定CPs按MakrerAdd格式的文件地址，将CTPs导入到打开的工程文件中，可以选择是否执行BA，同时还可以导出Metashape为Markers计算的指标
 '''
 #################################################       SETUP      #####################################################
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Test40VGCPs\B12_40VGCPs.psx"
-# CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Database_B12_Extra20VGCPs.txt"
+# project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
+# CPsDbs_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\CheckPointsDatabase.txt"
 
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Test40VGCPs\B13_40VGCPs.psx"
-# CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Database_B13_20VGCPs.txt"
-
-project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Test40VGCPs\X23_40VGCPs.psx"
-CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Database_X23_20VGCPs.txt"
 MarkerGroupName = 'Orgin20VGCPs'
 # MarkerGroupName = 'Extra20VGCPs'
 chunk_name = ''

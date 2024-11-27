@@ -15,16 +15,6 @@ metashape.exe -r D:\Research\20221223_CoSfM\Release\CFTM_v1.2\toolbox\CheckPoint
 #################################################       SETUP      #####################################################
 # project_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Example\cftm_example_project.psx"
 # CPsDbs_path = r"E:\Projects\20230418_CFTM\20240624_Tutorial\Dataset\CheckPointsDatabase.txt"
-
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Test30VGCPs\B12_30VGCPs.psx"
-# CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\CheckPoints_B12_R2.txt"
-
-project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Test30VGCPs\B13_30VGCPs.psx"
-CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\CheckPoints_B13_R2.txt"
-
-# project_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\Test25VGCPs\X23_25VGCPs.psx"
-# CPsDbs_path = r"E:\Projects\20230418_CFTM\20240509_Revision\Exp13_VGCPsAccuracyConverge\CheckPoints_X23_R2.txt"
-
 CPs_Enabled = []
 chunk_name = ''
 epoch_mode = "DATE"  # or "FOLDER"
